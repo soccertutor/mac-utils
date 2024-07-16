@@ -1,0 +1,13 @@
+{
+  "name": "mac_utils",
+  "url": "",
+  "license": "MIT",
+  "tags": ["mac", "filesystem", "utils"],
+  "description": "Save jpg or pdf file via NSOpenDialog",
+  "version": "1.0.0",
+  "releasenote": "macOS support",
+  "contributors": ["buble"],
+  "dependencies": {
+
+  }
+}
