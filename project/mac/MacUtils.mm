@@ -64,9 +64,9 @@ namespace mac_utils {
 		NSURL *anUrl = [[panel URLs] lastObject];
 		NSString *sUrl = [anUrl absoluteString];
 		NSLog(@"Selected URL: %@", sUrl);
-		BOOL isTM = [sUrl scriptingEndsWith:[[DOC_DIR stringByAppendingPathComponent:[dataFolder stringByAddingPercentEncodingWithAllowedCharacters:NSCharacterSet.URLQueryAllowedCharacterSet]] stringByAppendingString:SLASH]];
+		BOOL isAppData = [sUrl scriptingEndsWith:[[DOC_DIR stringByAppendingPathComponent:[dataFolder stringByAddingPercentEncodingWithAllowedCharacters:NSCharacterSet.URLQueryAllowedCharacterSet]] stringByAppendingString:SLASH]];
 		BOOL isDocuments = [sUrl scriptingEndsWith:DOC_DIR];
-		if (!isTM && !isDocuments) {
+		if (!isAppData && !isDocuments) {
 			NSLog(@"These are not documents and data");
 			return false;
 		}
