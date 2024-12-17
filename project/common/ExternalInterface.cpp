@@ -30,10 +30,15 @@ static value mac_utils_save_file_with_type(value data, value type) {
 }
 DEFINE_PRIM (mac_utils_save_file_with_type, 2);
 
+static value mac_utils_transfer_data_from_documents_to_app_container(value prompt, value message, value dataFolderName, value checkFolders, value checkFiles) {
+	return alloc_bool(transferDataFromDocumentsToAppContainer(val_string(prompt), val_string(message), val_string(dataFolderName), val_string(checkFolders), val_string(checkFiles)));
+}
+DEFINE_PRIM (mac_utils_transfer_data_from_documents_to_app_container, 5);
+
 extern "C" void mac_utils_main () {
-	
+
 	val_int(0); // Fix Neko init
-	
+
 }
 DEFINE_ENTRY_POINT (mac_utils_main);
 
