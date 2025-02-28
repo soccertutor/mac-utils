@@ -45,3 +45,11 @@ private function onCancelled( event:MacUtilsEvent ) {
 	trace(event.data);
 }
 ```
+
+## 3. MacOS builds
+
+Use this commands to rebuild extension for all architectures on macOS:
+
+```bash
+lime rebuild mac-utils mac -64 -clean && lime rebuild mac-utils mac -debug -64 -clean && lime rebuild mac-utils mac -arm64 -clean && lime rebuild mac-utils mac -debug -arm64 -clean
+```

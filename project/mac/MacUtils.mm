@@ -4,7 +4,6 @@
 #define CHECK_DELIMITER @", "
 
 #import <Cocoa/Cocoa.h>
-#import <UniformTypeIdentifiers/UniformTypeIdentifiers.h>
 #include <MacUtils.h>
 
 namespace mac_utils {
@@ -21,18 +20,17 @@ namespace mac_utils {
 		savePanel.prompt = @"Save";
 		savePanel.message = @"Please select save path";
 
-		NSArray<UTType *> *allowedContentTypes;
-
 		if (strcmp(type,"jpg") == 0) {
 			[savePanel setNameFieldStringValue:@"Untitled.jpg"];
-			allowedContentTypes = @[UTTypeJPEG];
+			NSArray* fileTypes = [NSArray arrayWithObjects:@"jpg", @"JPG", nil];
+			[savePanel setAllowedFileTypes:fileTypes];
 		} else
 		if (strcmp(type,"pdf") == 0) {
 			[savePanel setNameFieldStringValue:@"Untitled.pdf"];
-			allowedContentTypes = @[UTTypePDF];
+			NSArray* fileTypes = [NSArray arrayWithObjects:@"pdf", @"PDF", nil];
+			[savePanel setAllowedFileTypes:fileTypes];
 		}
 
-		[savePanel setAllowedContentTypes:allowedContentTypes];
 		[savePanel setCanCreateDirectories:YES];
 		[savePanel setExtensionHidden:NO];
 

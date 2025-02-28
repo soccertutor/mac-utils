@@ -32,7 +32,10 @@
 		<files id="mac" if="macos"/>
 		
 		<section if="macos">
-			<vflag name="-framework" value="UniformTypeIdentifiers" />
+			<section unless="MACOSX_DEPLOYMENT_TARGET">
+				<setenv name="MACOSX_DEPLOYMENT_TARGET" value="10.12" unless="HXCPP_ARM64"/>
+				<setenv name="MACOSX_DEPLOYMENT_TARGET" value="11.7" if="HXCPP_ARM64" />
+			</section>
 		</section>
 	</target>
 	
