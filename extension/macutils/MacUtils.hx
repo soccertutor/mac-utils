@@ -42,9 +42,9 @@ class MacUtils {
 		#end
 	}
 
-	public static inline function saveFileWithType (data:String, type:String) {
+	public static inline function saveFileWithType (data:String, name:String, type:String) {
 		#if mac
-		return mac_utils_save_file_with_type(data, type);
+		return mac_utils_save_file_with_type(data, name, type);
 		#end
 	}
 
@@ -55,7 +55,7 @@ class MacUtils {
 	}
 
 	#if mac
-	private static var mac_utils_save_file_with_type = Lib.load ("mac_utils", "mac_utils_save_file_with_type", 2);
+	private static var mac_utils_save_file_with_type = Lib.load ("mac_utils", "mac_utils_save_file_with_type", 3);
 	private static var mac_utils_transfer_data_from_documents_to_app_container = Lib.load ("mac_utils", "mac_utils_transfer_data_from_documents_to_app_container", 5);
 	private static var mac_utils_set_event_handle = cpp.Lib.load ("mac_utils", "mac_utils_set_event_handle", 1);
 	#end

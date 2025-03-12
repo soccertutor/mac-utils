@@ -14,19 +14,18 @@ namespace mac_utils {
 
 	// data is base64 representation of jpg or pdf file
 	// type can be "jpg" or "pdf"
-	void saveFileWithType(const char *data, const char *type) {
+	void saveFileWithType(const char *data, const char *name, const char *type) {
 		NSSavePanel* savePanel = [NSSavePanel savePanel];
 		//savePanel.level = NSModalPanelWindowLevel;
 		savePanel.prompt = @"Save";
 		savePanel.message = @"Please select save path";
 
 		if (strcmp(type,"jpg") == 0) {
-			[savePanel setNameFieldStringValue:@"Untitled.jpg"];
+			[savePanel setNameFieldStringValue:[[NSString stringWithUTF8String: name] stringByAppendingString:@".jpg"]];
 			NSArray* fileTypes = [NSArray arrayWithObjects:@"jpg", @"JPG", nil];
 			[savePanel setAllowedFileTypes:fileTypes];
-		} else
-		if (strcmp(type,"pdf") == 0) {
-			[savePanel setNameFieldStringValue:@"Untitled.pdf"];
+		} else if (strcmp(type,"pdf") == 0) {
+			[savePanel setNameFieldStringValue:[[NSString stringWithUTF8String: name] stringByAppendingString:@".pdf"]];
 			NSArray* fileTypes = [NSArray arrayWithObjects:@"pdf", @"PDF", nil];
 			[savePanel setAllowedFileTypes:fileTypes];
 		}

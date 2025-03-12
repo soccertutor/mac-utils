@@ -3,7 +3,7 @@
 
 namespace mac_utils {
 
-	void saveFileWithType(const char *path, const char *type) {
+	void saveFileWithType(const char *path, const char *name, const char *type) {
 
 	}
 
