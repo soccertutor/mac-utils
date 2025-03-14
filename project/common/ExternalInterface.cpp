@@ -24,11 +24,11 @@ static value mac_utils_set_event_handle(value onEvent)
 }
 DEFINE_PRIM(mac_utils_set_event_handle, 1);
 
-static value mac_utils_save_file_with_type(value data, value type) {
-	saveFileWithType(val_string(data), val_string(type));
+static value mac_utils_save_file_with_type(value data, value name, value type) {
+	saveFileWithType(val_string(data), val_string(name), val_string(type));
 	return alloc_null();
 }
-DEFINE_PRIM (mac_utils_save_file_with_type, 2);
+DEFINE_PRIM (mac_utils_save_file_with_type, 3);
 
 static value mac_utils_transfer_data_from_documents_to_app_container(value prompt, value message, value dataFolderName, value checkFolders, value checkFiles) {
 	return alloc_bool(transferDataFromDocumentsToAppContainer(val_string(prompt), val_string(message), val_string(dataFolderName), val_string(checkFolders), val_string(checkFiles)));

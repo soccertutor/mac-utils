@@ -10,7 +10,7 @@ Allows to save jpg or pdf file.
 You can install mac-utils using haxelib:
 
 	haxelib git mac-utils https://github.com/soccertutor/mac-utils
-    
+
 	lime rebuild mac-utils mac
 
 
@@ -35,7 +35,7 @@ MacUtils.addEventListener(MacUtilsEvent.SELECT_FOLDER_ERROR, onCancelled);
 
 ```haxe
 final base64 = "base64string";
-MacUtils.saveFileWithType(base64, "jpg");
+MacUtils.saveFileWithType(base64, "Untitled", "jpg");
 
 private function onSelected( event:MacUtilsEvent ) {
 	trace(event.data);
